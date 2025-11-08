@@ -1,8 +1,8 @@
 import React from 'react';
 import logo from '../assets/PetMart.png'
 import { FaXTwitter } from "react-icons/fa6";
-import { FaFacebook,FaLinkedin } from "react-icons/fa";
-import { NavLink } from 'react-router';
+import { FaFacebook, FaLinkedin } from "react-icons/fa";
+import { Link, NavLink } from 'react-router';
 
 const Footer = () => {
     return (
@@ -10,9 +10,12 @@ const Footer = () => {
             <footer
                 className="w-full bg-[#003d3d] flex flex-col h-auto items-center bottom-0">
                 <div className="w-full max-w-[1440px] flex flex-col h-auto items-center gap-[50px] lg:flex-row lg:justify-between lg:gap-0 lg:items-start py-[80px] box-border">
-                    <div>
-                        <NavLink to='/'> 
-                            <img src={logo} className='w-[100px] h-[100px]'/></NavLink>
+                    <div className="flex flex-col gap-[16px]">
+                        <NavLink to='/'>
+                            <img src={logo} className='w-[100px] h-[100px] mx-auto lg:mx-0' />
+                        </NavLink>
+                        <p className='text-[16px] w-full max-w-[250px] text-[#A1A1AA] text-center lg:text-justify'>PawMart connects local pet owners and buyers for adoption and pet
+                            care products.</p>
                     </div>
                     <ul className="flex flex-col gap-[16px]">
                         <li className="text-[20px] font-medium text-white text-center lg:text-start">Company</li>
@@ -22,9 +25,9 @@ const Footer = () => {
                     </ul>
 
                     <ul className="flex flex-col gap-[16px]">
-                        <li className="text-[20px] font-medium text-white text-center lg:text-start">Services</li>
-                        <li className="text-[#A1A1AA] cursor-pointer text-center lg:text-start">Products & Services</li>
-                        <li className="text-[#A1A1AA] cursor-pointer text-center lg:text-start">Customer Stories</li>
+                        <li className="text-[20px] font-medium text-white text-center lg:text-start">Explore</li>
+                        <Link className="text-[#A1A1AA] cursor-pointer text-center lg:text-start">Home</Link>
+                        <Link className="text-[#A1A1AA] cursor-pointer text-center lg:text-start">Contact</Link>
                     </ul>
 
                     <ul className="flex flex-col gap-[16px]">

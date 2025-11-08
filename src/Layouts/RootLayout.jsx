@@ -7,7 +7,7 @@ const RootLayout = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <Outlet></Outlet>
+            <Outlet className='bg-[#ADD8E6]'></Outlet>
             <Footer></Footer>
         </div>
     );

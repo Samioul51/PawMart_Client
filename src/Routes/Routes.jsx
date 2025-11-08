@@ -4,6 +4,7 @@ import Home from '../Pages/Home';
 import Pets_Supplies from '../Pages/Pets_Supplies';
 import Login from '../Pages/Login';
 import Register from '../Pages/Register';
+import ErrorPage from '../Pages/ErrorPage';
 
 const router=createBrowserRouter([
     {
@@ -31,6 +32,10 @@ const router=createBrowserRouter([
                 Component:Register
             }
         ],
+    },
+    {
+        path:'*',
+        Component:ErrorPage
     }
 ]);
 
