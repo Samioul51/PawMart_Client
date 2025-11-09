@@ -32,6 +32,7 @@ const Home = () => {
                 }}
             />
         <div className='bg-[#6897ff]'>
+            <title>{`PawMart | Home`}</title>
             <div className='mb-[50px]'>
                 <Swiper
                     autoHeight={true}

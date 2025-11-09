@@ -2,7 +2,7 @@ import React, { use, useState } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { motion, useScroll } from 'motion/react';
-import { toast } from 'react-toastify';
+import toast, { Toaster } from 'react-hot-toast';
 import { FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
@@ -20,23 +20,23 @@ const Login = () => {
         const password=form.password.value;
         signIn(email,password).then((res)=>{
             const user=res.user;
-            toast("Logged In Successfully!");
+            toast.success("Logged In Successfully!");
             navigate(`${location.state?location.state:"/"}`);
         }).catch((error)=>{
             const errorCode=error.code;
             const errorMessage=error.message;
-            toast(errorCode,errorMessage);
+            toast.error(errorCode,errorMessage);
         });
     }
 
     const handleGoogleLogin=()=>{
             signInWithGoogle().then((res)=>{
-                toast("Logged in with Google!");
+                toast.success("Logged in with Google!");
                 navigate(`${location.state?location.state:"/"}`);
             }).catch((error)=>{
                 const errorCode=error.code;
                 const errorMessage=error.message;
-                toast(errorCode,errorMessage);
+                toast.error(errorCode,errorMessage);
             })
         }
         

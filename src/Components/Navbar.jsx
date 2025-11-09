@@ -2,7 +2,7 @@ import React, { use } from 'react';
 import { NavLink } from 'react-router';
 import logo from '../assets/PetMart.png';
 import { AuthContext } from '../Provider/AuthProvider';
-import { toast } from 'react-toastify';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Navbar = () => {
     const { user, logout } = use(AuthContext);
@@ -12,12 +12,11 @@ const Navbar = () => {
 
     const handleLogout = () => {
         logout().then(() => {
-            toast("Logged out Successfully!");
+            toast.success("Logged out Successfully!");
             handleCloseModal();
         }).catch((error) => {
-            const errorCode = error.code;
             const errorMessage = error.message;
-            toast(errorCode, errorMessage);
+            toast.error(errorMessage);
             handleCloseModal();
         })
     }
@@ -35,7 +34,7 @@ const Navbar = () => {
                 {
                     user ? (
                         <>
-                            <NavLink to='/add_listings' className='text-center font-bold bg-linear-to-r from-[#0047ab] to-[#1ca9c9] bg-clip-text text-transparent hover:text-[#D84437] ease duration-500'>Add Listings</NavLink>
+                            <NavLink to='/add_listings' className='text-center font-bold bg-linear-to-r from-[#0047ab] to-[#1ca9c9] bg-clip-text text-transparent hover:text-[#D84437] ease duration-500'>Add Listing</NavLink>
                             <NavLink to='/my_listings' className='text-center font-bold bg-linear-to-r from-[#0047ab] to-[#1ca9c9] bg-clip-text text-transparent hover:text-[#D84437] ease duration-500'>My Listings</NavLink>
                             <NavLink to='/my_orders' className='text-center font-bold bg-linear-to-r from-[#0047ab] to-[#1ca9c9] bg-clip-text text-transparent hover:text-[#D84437] ease duration-500'>My Orders</NavLink>
                         </>

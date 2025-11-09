@@ -3,10 +3,10 @@ import React, { use, useState } from 'react';
 import { FaGoogle } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
-import { toast } from 'react-toastify';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Register = () => {
-    const { createUser,setUser,signInWithGoogle}=use(AuthContext);
+    const { createUser,setUser,signInWithGoogle,updateUser}=use(AuthContext);
     const navigate=useNavigate();
     const [error,setError]=useState("");
     const {scrollYProgress}=useScroll();
@@ -29,22 +29,30 @@ const Register = () => {
 
         createUser(email,password).then(res=>{
             const user=res.user;
-            toast("Registered Successfully!");
+            updateUser({
+                displayName: name,
+                photoUrl: photo
+            }).then(()=>{
+                setUser({...user,displayName:name,photoURL: photo});
+            }).catch((error)=>{
+                toast.error(error.message);
+                setUser(user);
+            });
+            toast.success("Registered Successfully!");
             navigate("/");
         }).catch((error)=>{
             const errorMessage=error.message;
-            toast(errorMessage);
+            toast.error(errorMessage);
         });
     }
 
     const handleGoogleRegister=()=>{
         signInWithGoogle().then((res)=>{
-            toast("Logged in with Google!");
+            toast.success("Logged in with Google!");
             navigate(`${location.state?location.state:"/"}`);
         }).catch((error)=>{
-            const errorCode=error.code;
             const errorMessage=error.message;
-            toast(errorCode,errorMessage);
+            toast.error(errorMessage);
         })
     }
 
