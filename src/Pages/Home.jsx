@@ -11,14 +11,16 @@ import slide2 from '../assets/slide2.jpg';
 import slide3 from '../assets/slide3.jpg';
 import { motion, useScroll } from 'motion/react';
 import Awareness from '../Components/Awareness';
+import PetHero from '../Components/PetHero';
 
 const Home = () => {
 
-    const {scrollYProgress}=useScroll();
-    
+    const { scrollYProgress } = useScroll();
+
     return (
         <>
-        <motion.div
+            <title>{`PawMart | Home`}</title>
+            <motion.div
                 id="scroll-indicator"
                 style={{
                     scaleX: scrollYProgress,
@@ -32,33 +34,37 @@ const Home = () => {
                     zIndex: 9999
                 }}
             />
-        <div className='bg-[#6897ff]'>
-            <title>{`PawMart | Home`}</title>
-            <div className='mb-[50px]'>
-                <Swiper
-                    autoHeight={true}
-                    spaceBetween={20}
-                    navigation={true}
-                    pagination={{
-                        clickable: true,
-                    }}
-                    autoplay={{
-                        delay: 2500, 
-                        disableOnInteraction: false, 
-                    }}
-                    modules={[Navigation, Pagination, Autoplay]}
-                    className="mySwiper"
-                >
-                    <SwiperSlide><img src={slide1} className='w-full max-w-full h-auto'/></SwiperSlide>
-                    <SwiperSlide><img src={slide2} className='w-full max-w-full h-auto'/></SwiperSlide>
-                    <SwiperSlide><img src={slide3} className='w-full max-w-full h-auto'/></SwiperSlide>
-                </Swiper>
+            <div className='bg-[#6897ff]'>
+
+                <div className='mb-[50px]'>
+                    <Swiper
+                        autoHeight={true}
+                        spaceBetween={20}
+                        navigation={true}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                        }}
+                        modules={[Navigation, Pagination, Autoplay]}
+                        className="mySwiper"
+                    >
+                        <SwiperSlide><img src={slide1} className='w-full max-w-full h-auto' /></SwiperSlide>
+                        <SwiperSlide><img src={slide2} className='w-full max-w-full h-auto' /></SwiperSlide>
+                        <SwiperSlide><img src={slide3} className='w-full max-w-full h-auto' /></SwiperSlide>
+                    </Swiper>
+                </div>
+
+                {/* Why Adopt from PawMart Section */}
+
+                <Awareness></Awareness>
+
+                {/* Users */}
+                <p className='text-center text-[32px] font-bold mb-[10px]'>MEET OUR PET LOVERS</p>
+                <PetHero></PetHero>
             </div>
-
-            {/* Why Adopt from PawMart Section */}
-
-            <Awareness></Awareness>
-        </div>
         </>
     );
 };
