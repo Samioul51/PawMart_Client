@@ -38,7 +38,14 @@ const Register = () => {
     }
 
     const handleGoogleRegister=()=>{
-
+        signInWithGoogle().then((res)=>{
+            toast("Logged in with Google!");
+            navigate(`${location.state?location.state:"/"}`);
+        }).catch((error)=>{
+            const errorCode=error.code;
+            const errorMessage=error.message;
+            toast(errorCode,errorMessage);
+        })
     }
 
     return (
