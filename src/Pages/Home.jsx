@@ -10,6 +10,7 @@ import slide1 from '../assets/slide1.jpg';
 import slide2 from '../assets/slide2.jpg';
 import slide3 from '../assets/slide3.jpg';
 import { motion, useScroll } from 'motion/react';
+import Awareness from '../Components/Awareness';
 
 const Home = () => {
 
@@ -54,9 +55,9 @@ const Home = () => {
                 </Swiper>
             </div>
 
-            <div>
-                    
-            </div>
+            {/* Why Adopt from PawMart Section */}
+
+            <Awareness></Awareness>
         </div>
         </>
     );
