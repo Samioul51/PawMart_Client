@@ -68,8 +68,8 @@ const Login = () => {
                                     <input name="email" type="email" className="input" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
                                     <label className="password">Password</label>
                                     <input name="password" type="password" className="input" placeholder="Password" required />
-                                    <div className='w-full max-w-[320px]'>Don't have an account?
-                                        <Link to="/register" className="link link-hover text-[#0047ab]">Register</Link> here
+                                    <div className='w-full max-w-[320px]'>
+                                        Don't have an account? <Link to="/register" className="link link-hover text-[#0047ab]">Register</Link> here
                                     </div>
                                     <button type="submit" className="btn btn-neutral mt-4 border-none  bg-linear-to-r from-[#0047ab] to-[#1ca9c9]  hover:from-[#D84437] hover:to-[#ff6b6b] ease   duration-500">Login</button>
                                 </fieldset>

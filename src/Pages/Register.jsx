@@ -84,8 +84,8 @@ const Register = () => {
                                     {
                                         error && <p className='text-xs text-red-500'>{error}</p>
                                     }
-                                    <div>
-                                        <Link to="/login" className="link link-hover">Back to Login</Link>
+                                    <div>Already have an account? 
+                                        <Link to="/login" className="link link-hover text-[#0047ab]"> Login</Link> here
                                     </div>
                                     <button type="submit" className="btn btn-neutral mt-4 border-none  bg-linear-to-r from-[#0047ab] to-[#1ca9c9]  hover:from-[#D84437] hover:to-[#ff6b6b] ease   duration-500">Register</button>
 

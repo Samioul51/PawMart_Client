@@ -5,6 +5,12 @@ import Pets_Supplies from '../Pages/Pets_Supplies';
 import Login from '../Pages/Login';
 import Register from '../Pages/Register';
 import ErrorPage from '../Pages/ErrorPage';
+import MyListings from '../Pages/MyListings';
+import AddListings from '../Pages/AddListings';
+import MyOrders from '../Pages/MyOrders';
+import PublicRoute from '../Provider/PublicRoute';
+import PrivateRoute from '../Provider/PrivateRoute';
+import Profile from '../Pages/Profile';
 
 const router=createBrowserRouter([
     {
@@ -25,11 +31,39 @@ const router=createBrowserRouter([
             },
             {
                 path:'/login',
-                Component:Login
+                element:<PublicRoute>
+                    <Login></Login>
+                </PublicRoute>
             },
             {
                 path:'/register',
-                Component:Register
+                element:<PublicRoute>
+                    <Register></Register>
+                </PublicRoute>
+            },
+            {
+                path:'/add_listings',
+                element:<PrivateRoute>
+                    <AddListings></AddListings>
+                </PrivateRoute>
+            },
+            {
+                path:'/my_listings',
+                element:<PrivateRoute>
+                    <MyListings></MyListings>
+                </PrivateRoute>
+            },
+            {
+                path:'/my_orders',
+                element:<PrivateRoute>
+                    <MyOrders></MyOrders>
+                </PrivateRoute>
+            },
+            {
+                path:'/profile',
+                element:<PrivateRoute>
+                    <Profile></Profile>
+                </PrivateRoute>
             }
         ],
     },
