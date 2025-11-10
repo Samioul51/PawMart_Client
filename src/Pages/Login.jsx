@@ -74,7 +74,7 @@ const Login = () => {
                                     <button type="submit" className="btn btn-neutral mt-4 border-none bg-linear-to-r from-[#0047ab] to-[#1ca9c9] hover:from-[#D84437] hover:to-[#ff6b6b] ease-in transition duration-500">Login</button>
                                 </fieldset>
                             </form>
-                            <button onClick={handleGoogleLogin} className="btn btn-neutral mt-4 border-none bg-linear-to-r from-[#0047ab] to-[#1ca9c9] hover:from-[#D84437] hover:to-[#ff6b6b] ease-in transition duration-500"><FaGoogle /> Continue with Google</button>
+                            <button onClick={handleGoogleLogin} className="w-full max-w-[336px] mx-auto btn btn-neutral border-none bg-linear-to-r from-[#0047ab] to-[#1ca9c9] hover:from-[#D84437] hover:to-[#ff6b6b] ease-in transition duration-500 mb-[30px]"><FaGoogle /> Continue with Google</button>
                         </div>
                     </div>
                 </div>

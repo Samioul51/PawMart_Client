@@ -7,7 +7,7 @@ const Category = ({ cat }) => {
     // console.log(cat);
     return (
         <motion.div
-            whileHover={{ scale: 1.2 }}
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.8 }}
         >
             <Link to={`/category/${category}`} className="block">
