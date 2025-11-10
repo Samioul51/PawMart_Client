@@ -11,6 +11,7 @@ import MyOrders from '../Pages/MyOrders';
 import PublicRoute from '../Provider/PublicRoute';
 import PrivateRoute from '../Provider/PrivateRoute';
 import Profile from '../Pages/Profile';
+import CategoryWiseListings from '../Pages/CategoryWiseListings';
 
 const router=createBrowserRouter([
     {
@@ -64,6 +65,11 @@ const router=createBrowserRouter([
                 element:<PrivateRoute>
                     <Profile></Profile>
                 </PrivateRoute>
+            },
+            {
+                path:'/category/:category',
+                Component:CategoryWiseListings,
+                loader:()=>fetch("http://localhost:3000/listings")
             }
         ],
     },
