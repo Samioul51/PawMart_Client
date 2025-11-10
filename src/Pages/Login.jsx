@@ -71,10 +71,10 @@ const Login = () => {
                                     <div className='w-full max-w-[320px]'>
                                         Don't have an account? <Link to="/register" className="link link-hover text-[#0047ab]">Register</Link> here
                                     </div>
-                                    <button type="submit" className="btn btn-neutral mt-4 border-none  bg-linear-to-r from-[#0047ab] to-[#1ca9c9]  hover:from-[#D84437] hover:to-[#ff6b6b] ease   duration-500">Login</button>
+                                    <button type="submit" className="btn btn-neutral mt-4 border-none bg-linear-to-r from-[#0047ab] to-[#1ca9c9] hover:from-[#D84437] hover:to-[#ff6b6b] ease-in transition duration-500">Login</button>
                                 </fieldset>
                             </form>
-                            <button onClick={handleGoogleLogin}className="w-full max-w-[336px] mx-auto mb-[20px] btn btn-neutral border-none bg-linear-to-r from-[#0047ab] to-[#1ca9c9] hover:from-[#D84437] hover:to-[#ff6b6b] ease   duration-500"><FaGoogle /> Continue with Google</button>
+                            <button onClick={handleGoogleLogin} className="btn btn-neutral mt-4 border-none bg-linear-to-r from-[#0047ab] to-[#1ca9c9] hover:from-[#D84437] hover:to-[#ff6b6b] ease-in transition duration-500"><FaGoogle /> Continue with Google</button>
                         </div>
                     </div>
                 </div>

@@ -3,7 +3,7 @@ import React from 'react';
 
 const Category = ({ cat }) => {
     const { category, img } = cat;
-    console.log(cat);
+    // console.log(cat);
     return (
         <motion.div
             whileHover={{ scale: 1.2 }}

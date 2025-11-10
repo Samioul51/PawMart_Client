@@ -13,16 +13,20 @@ import { motion, useScroll } from 'motion/react';
 import Awareness from '../Components/Awareness';
 import PetHero from '../Components/PetHero';
 import Categories from '../Components/Categories';
+import Listing from '../Components/Listing';
 
 
-const categoryPromise=fetch("http://localhost:3000/categories").then(res=>res.json());
+const categoryPromise = fetch("http://localhost:3000/categories").then(res => res.json());
+const listingsPromise = fetch("http://localhost:3000/listings").then(res => res.json());
 
 const Home = () => {
 
     const { scrollYProgress } = useScroll();
 
-    const category=use(categoryPromise);
+    const category = use(categoryPromise);
+    const listings = use(listingsPromise);
     // console.log(category.data);
+    const listingData=listings.data;
     return (
         <>
             <title>{`PawMart | Home`}</title>
@@ -62,13 +66,27 @@ const Home = () => {
                         <SwiperSlide><img src={slide3} className='w-full max-w-full h-auto' /></SwiperSlide>
                     </Swiper>
                 </div>
-                
+
                 {/* Categories */}
+
                 <p className='text-center text-[32px] font-bold mb-[10px]'>CATEGORIES</p>
                 <Categories category={category}></Categories>
 
+                {/* Recent Listings */}
+
+                <p className='text-center text-[32px] font-bold mb-[10px]'>RECENT LISTINGS</p>
+
+                <div className='w-full max-w-[1440px] h-auto grid grid-cols-1 mx-auto md:grid-cols-2 lg:grid-cols-3 gap-[50px] px-[40px] pb-[50px] box-border'>
+
+                    {
+                        listingData.slice(0,6).map(item => (
+                            <Listing key={item._id} item={item}></Listing>
+                        ))
+                    }
+                </div>
+
                 {/* Why Adopt from PawMart Section */}
-                
+
                 <Awareness></Awareness>
 
                 {/* Users */}

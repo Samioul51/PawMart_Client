@@ -1,12 +1,28 @@
-import React from 'react';
+import React, { use, useState } from 'react';
 import { motion, useScroll } from 'motion/react';
+import { IoIosArrowDropdownCircle } from "react-icons/io";
+import Listing from '../Components/Listing';
+
+const listingsPromise = fetch("http://localhost:3000/listings").then(res => res.json());
 
 const Pets_Supplies = () => {
-    const {scrollYProgress}=useScroll();
-    
+    const { scrollYProgress } = useScroll();
+
+    const listings = use(listingsPromise);
+    // console.log(category.data);
+    const listingData = listings.data;
+
+    const [filter,setFilter]=useState("ALL");
+
+    const filteredData=listingData.filter(item=>{
+        if(filter==="ALL")
+            return true;
+        return item.category.toUpperCase()===filter;
+    });
+
     return (
         <>
-        <motion.div
+            <motion.div
                 id="scroll-indicator"
                 style={{
                     scaleX: scrollYProgress,
@@ -20,9 +36,32 @@ const Pets_Supplies = () => {
                     zIndex: 9999
                 }}
             />
-        <div className='bg-[#6897ff]'>
-            <title>{`PawMart | Pets & Supplies`}</title>
-        </div>
+            <div className='bg-[#6897ff] py-[50px]'>
+                <title>{`PawMart | Pets & Supplies`}</title>
+                <p className='text-center text-[32px] font-bold mb-[30px]'>ALL PETS & PRODUCTS</p>
+                <div className='mx-auto max-w-[1440px] mb-[50px] px-[40px]'>
+                    <div className="dropdown dropdown-hover">
+                        <div tabIndex={0} role="button" className="btn m-1"><IoIosArrowDropdownCircle /> {filter}
+                        </div>
+                        <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+                            {
+                                ["ALL","PETS (ADOPTION)","PET FOOD","ACCESSORIES","PET CARE PRODUCTS"].map((category)=>(
+                                    <li key={category}><a onClick={()=>setFilter(category)}>{category}</a></li>
+                                ))
+                            }
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div className='w-full max-w-[1440px] h-auto grid grid-cols-1 mx-auto md:grid-cols-2 lg:grid-cols-3 gap-[50px] px-[40px] pb-[50px] box-border'>
+
+                    {
+                        filteredData.map(item => (
+                            <Listing key={item._id} item={item}></Listing>
+                        ))
+                    }
+                </div>
+            </div>
         </>
     );
 };
