@@ -9,8 +9,7 @@ const PetHero = () => {
     return (
         <div className='w-full max-w-full h-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-[10px] px-[40px] pb-[50px] box-border'>
             <motion.div
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.8 }}
+                whileHover={{ scale: 1.05 }}
             >
                 <div className='flex flex-col p-[16px] box-border bg-white inter rounded-[8px] shadow-lg'>
                     <img src={user1} className='w-full h-[285px] rounded-[8px] mb-[16px] border border-gray-500' />
@@ -19,8 +18,7 @@ const PetHero = () => {
                 </div>
             </motion.div>
             <motion.div
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.8 }}
+                whileHover={{ scale: 1.05 }}
             >
                 <div className='flex flex-col p-[16px] box-border bg-white inter rounded-[8px] shadow-lg'>
                     <img src={user2} className='w-full h-[285px] rounded-[8px] mb-[16px] border border-gray-500' />
@@ -29,8 +27,7 @@ const PetHero = () => {
                 </div>
             </motion.div>
             <motion.div
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.8 }}
+                whileHover={{ scale: 1.05 }}
             >
                 <div className='flex flex-col p-[16px] box-border bg-white inter rounded-[8px] shadow-lg'>
                     <img src={user3} className='w-full h-[285px] rounded-[8px] mb-[16px] border border-gray-500' />
@@ -39,8 +36,7 @@ const PetHero = () => {
                 </div>
             </motion.div>
             <motion.div
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.8 }}
+                whileHover={{ scale: 1.05 }}
             >
                 <div className='flex flex-col p-[16px] box-border bg-white inter rounded-[8px] shadow-lg'>
                     <img src={user4} className='w-full h-[285px] rounded-[8px] mb-[16px] border border-gray-500' />

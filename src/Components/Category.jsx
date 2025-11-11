@@ -8,7 +8,6 @@ const Category = ({ cat }) => {
     return (
         <motion.div
             whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.8 }}
         >
             <Link to={`/category/${category}`} className="block">
             <div className='flex flex-col p-[16px] box-border bg-white inter rounded-[8px] shadow-lg cursor-pointer'>
