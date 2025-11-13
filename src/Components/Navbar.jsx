@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import { NavLink } from 'react-router';
 import logo from '../assets/PetMart.png';
 import { AuthContext } from '../Provider/AuthProvider';
@@ -7,8 +7,20 @@ import toast, { Toaster } from 'react-hot-toast';
 const Navbar = () => {
     const { user, logout } = use(AuthContext);
 
+    const [theme,setTheme]=useState(localStorage.getItem("theme")|| "light");
+
+    useEffect(()=>{
+        const html=document.querySelector("html");
+        html.setAttribute("data-theme",theme);
+        localStorage.setItem("theme",theme)
+    },[theme])
+
     const handleOpenModal = () => document.getElementById("my_modal_5").showModal();
     const handleCloseModal = () => document.getElementById("my_modal_5").close();
+
+    const handleTheme=(checked)=>{
+        setTheme(checked?"dark":"light");
+    }
 
     const handleLogout = () => {
         logout().then(() => {
@@ -46,6 +58,11 @@ const Navbar = () => {
                 }
             </div>
             <div className='flex flex-col items-center lg:flex-row gap-[30px]'>
+                <input
+                    onChange={(e) => handleTheme(e.target.checked)}
+                    type="checkbox"
+                    defaultChecked={localStorage.getItem('theme') === "dark"}
+                    className="toggle" />
                 {
                     user ? (
                         <>
