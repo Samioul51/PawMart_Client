@@ -13,11 +13,12 @@ const Pets_Supplies = () => {
     const listingData = listings.data;
 
     const [filter,setFilter]=useState("ALL");
+    const [search,setSearch]=useState("");
 
     const filteredData=listingData.filter(item=>{
-        if(filter==="ALL")
-            return true;
-        return item.category.toUpperCase()===filter;
+        const matchCat= filter==="ALL" || item.category.toUpperCase()===filter;
+        const matchSer= item.name.toUpperCase().includes(search.toUpperCase());
+        return matchCat && matchSer;        
     });
 
     return (
@@ -39,7 +40,14 @@ const Pets_Supplies = () => {
             <div className='bg-[#6897ff] py-[50px]'>
                 <title>{`PawMart | Pets & Supplies`}</title>
                 <p className='text-center text-[32px] font-bold mb-[30px]'>ALL PETS & PRODUCTS</p>
-                <div className='mx-auto max-w-[1440px] mb-[50px] px-[40px]'>
+                <div className='flex items-center justify-between mx-auto max-w-[1440px] mb-[50px] px-[40px]'>
+                    <input
+                        type="text"
+                        placeholder="Search by name"
+                        value={search}
+                        onChange={(e)=>setSearch(e.target.value)}
+                        className="input input-bordered w-full max-w-xs"
+                    />
                     <div className="dropdown dropdown-hover">
                         <div tabIndex={0} role="button" className="btn m-1"><IoIosArrowDropdownCircle /> {filter}
                         </div>

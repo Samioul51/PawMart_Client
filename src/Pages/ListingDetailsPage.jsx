@@ -64,6 +64,7 @@ const ListingDetailsPage = () => {
     // console.log(data);
     return (
         <div className='bg-[#6897ff] py-[50px]'>
+            <title>{`PawMart | ${name}`}</title>
             <div className='w-full max-w-[1440px] mx-auto flex flex-col items-center lg:items-stretch lg:flex-row lg:justify-between gap-[50px]'>
 
                 <img src={image} className='w-full max-w-[500px] h-auto rounded-[10px]' />
