@@ -10,8 +10,8 @@ const AddListing = () => {
     const [price, setPrice] = useState();
 
     const navigate = useNavigate();
-    const userID = user.UID;
-
+    const userID = user.uid;
+    console.log(userID)
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
