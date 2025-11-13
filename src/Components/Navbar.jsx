@@ -49,7 +49,7 @@ const Navbar = () => {
                 {
                     user ? (
                         <>
-                            <NavLink to="/profile"><img src={user.photoURL} className="w-[40px] h-[40px] rounded-[50%]" /></NavLink>
+                            <NavLink><img src={user.photoURL} className="w-[40px] h-[40px] rounded-[50%]" /></NavLink>
                             <NavLink onClick={handleOpenModal} className='text-center font-bold bg-linear-to-r from-[#0047ab] to-[#1ca9c9] bg-clip-text text-transparent hover:text-[#D84437] ease duration-500'>Logout</NavLink>
                         </>
                     ) : (

@@ -9,7 +9,6 @@ import MyListings from '../Pages/MyListings';
 import MyOrders from '../Pages/MyOrders';
 import PublicRoute from '../Provider/PublicRoute';
 import PrivateRoute from '../Provider/PrivateRoute';
-import Profile from '../Pages/Profile';
 import CategoryWiseListings from '../Pages/CategoryWiseListings';
 import ListingDetailsPage from '../Pages/ListingDetailsPage';
 import AddListing from '../Pages/AddListing';
@@ -59,12 +58,6 @@ const router=createBrowserRouter([
                 path:'/my_orders',
                 element:<PrivateRoute>
                     <MyOrders></MyOrders>
-                </PrivateRoute>
-            },
-            {
-                path:'/profile',
-                element:<PrivateRoute>
-                    <Profile></Profile>
                 </PrivateRoute>
             },
             {
