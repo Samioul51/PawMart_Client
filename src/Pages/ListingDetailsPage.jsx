@@ -64,9 +64,9 @@ const ListingDetailsPage = () => {
     // console.log(data);
     return (
         <div className='bg-[#6897ff] py-[50px]'>
-            <div className='w-full max-w-[1440px] mx-auto flex flex-col items-center lg:items-start lg:flex-row lg:justify-between gap-[50px]'>
+            <div className='w-full max-w-[1440px] mx-auto flex flex-col items-center lg:items-stretch lg:flex-row lg:justify-between gap-[50px]'>
 
-                <img src={image} className='w-full max-w-[500px] h-auto min-h-[580px] rounded-[10px]' />
+                <img src={image} className='w-full max-w-[500px] h-auto rounded-[10px]' />
 
                 <div className='w-full max-w-[60%] flex flex-col justify-center p-[30px] bg-white rounded-[10px] shadow-lg'>
 

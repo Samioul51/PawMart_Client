@@ -6,13 +6,13 @@ import Login from '../Pages/Login';
 import Register from '../Pages/Register';
 import ErrorPage from '../Pages/ErrorPage';
 import MyListings from '../Pages/MyListings';
-import AddListings from '../Pages/AddListings';
 import MyOrders from '../Pages/MyOrders';
 import PublicRoute from '../Provider/PublicRoute';
 import PrivateRoute from '../Provider/PrivateRoute';
 import Profile from '../Pages/Profile';
 import CategoryWiseListings from '../Pages/CategoryWiseListings';
 import ListingDetailsPage from '../Pages/ListingDetailsPage';
+import AddListing from '../Pages/AddListing';
 
 const router=createBrowserRouter([
     {
@@ -46,7 +46,7 @@ const router=createBrowserRouter([
             {
                 path:'/add_listings',
                 element:<PrivateRoute>
-                    <AddListings></AddListings>
+                    <AddListing></AddListing>
                 </PrivateRoute>
             },
             {
@@ -79,7 +79,7 @@ const router=createBrowserRouter([
                     </ListingDetailsPage>
                 </PrivateRoute>,
                 loader:({params})=>fetch(`http://localhost:3000/listings/${params.id}`)
-            }
+            },
         ],
     },
     {
