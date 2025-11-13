@@ -37,7 +37,7 @@ const AddListing = () => {
             uid:userID
         }
 
-        fetch("http://localhost:3000/listing", {
+        fetch("https://paw-mart-server-seven.vercel.app/listing", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

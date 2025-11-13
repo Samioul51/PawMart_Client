@@ -63,7 +63,7 @@ const router=createBrowserRouter([
             {
                 path:'/category/:category',
                 Component:CategoryWiseListings,
-                loader:()=>fetch("http://localhost:3000/listings")
+                loader:()=>fetch("https://paw-mart-server-seven.vercel.app/listings")
             },
             {
                 path:'/listings/:id',
@@ -71,7 +71,7 @@ const router=createBrowserRouter([
                     <ListingDetailsPage>
                     </ListingDetailsPage>
                 </PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:3000/listings/${params.id}`)
+                loader:({params})=>fetch(`https://paw-mart-server-seven.vercel.app/listings/${params.id}`)
             },
         ],
     },

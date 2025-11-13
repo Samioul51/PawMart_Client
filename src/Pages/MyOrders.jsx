@@ -4,7 +4,7 @@ import { AuthContext } from '../Provider/AuthProvider';
 import { jsPDF } from 'jspdf'
 import { autoTable } from 'jspdf-autotable'
 
-const ordersPromise = fetch("http://localhost:3000/orders").then(res => res.json());
+const ordersPromise = fetch("https://paw-mart-server-seven.vercel.app/orders").then(res => res.json());
 
 const MyOrders = () => {
     const { scrollYProgress } = useScroll();

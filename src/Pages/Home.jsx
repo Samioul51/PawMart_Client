@@ -16,8 +16,8 @@ import Categories from '../Components/Categories';
 import Listing from '../Components/Listing';
 
 
-const categoryPromise = fetch("http://localhost:3000/categories").then(res => res.json());
-const listingsPromise = fetch("http://localhost:3000/listings").then(res => res.json());
+const categoryPromise = fetch("https://paw-mart-server-seven.vercel.app/categories").then(res => res.json());
+const listingsPromise = fetch("https://paw-mart-server-seven.vercel.app/listings").then(res => res.json());
 
 const Home = () => {
 

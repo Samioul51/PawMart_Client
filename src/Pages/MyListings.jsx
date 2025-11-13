@@ -15,7 +15,7 @@ const MyListings = () => {
     const [formPrice, setFormPrice] = useState("");
 
     useEffect(() => {
-        fetch("http://localhost:3000/listings")
+        fetch("https://paw-mart-server-seven.vercel.app/listings")
             .then(res => res.json())
             .then(data => {
                 setListings(data.data);
@@ -40,7 +40,7 @@ const MyListings = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:3000/listings/${_id}`, {
+                fetch(`https://paw-mart-server-seven.vercel.app/listings/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -80,7 +80,7 @@ const MyListings = () => {
             date: form.date.value
         }
 
-        fetch(`http://localhost:3000/listings/${editingListing._id}`, {
+        fetch(`https://paw-mart-server-seven.vercel.app/listings/${editingListing._id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'

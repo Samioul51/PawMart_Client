@@ -3,7 +3,7 @@ import { motion, useScroll } from 'motion/react';
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 import Listing from '../Components/Listing';
 
-const listingsPromise = fetch("http://localhost:3000/listings").then(res => res.json());
+const listingsPromise = fetch("https://paw-mart-server-seven.vercel.app/listings").then(res => res.json());
 
 const Pets_Supplies = () => {
     const { scrollYProgress } = useScroll();

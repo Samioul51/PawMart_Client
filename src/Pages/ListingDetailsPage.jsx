@@ -46,7 +46,7 @@ const ListingDetailsPage = () => {
             uid:buyerUID
         }
 
-        fetch("http://localhost:3000/order",{
+        fetch("https://paw-mart-server-seven.vercel.app/order",{
             method:"POST",
             headers:{
                 'Content-Type':'application/json'
