@@ -34,13 +34,13 @@ const Navbar = () => {
     }
 
     return (
-        <div className='flex flex-col items-center lg:justify-between lg:flex-row px-[30px] gap-[10px] lg:gap-0 py-[20px] box-border inter shadow-lg sticky top-0 z-50 bg-white'>
+        <div className='flex flex-col items-center lg:justify-between lg:flex-row px-[40px] gap-[20px] lg:gap-0 py-[20px] box-border inter shadow-lg sticky top-0 z-50 bg-white'>
             <div>
                 <NavLink to='/'>
                     <img src={logo} className='w-[100px] h-[100px]' />
                 </NavLink>
             </div>
-            <div className='flex flex-col lg:flex-row gap-[30px]'>
+            <div className='flex flex-col lg:flex-row gap-[20px]  lg:gap-[30px]'>
                 <NavLink to='/home' className='text-center font-bold bg-linear-to-r from-[#0047ab] to-[#1ca9c9] bg-clip-text text-transparent hover:text-[#D84437] ease duration-500'>Home</NavLink>
                 <NavLink to='/pets_supplies' className='text-center font-bold bg-linear-to-r from-[#0047ab] to-[#1ca9c9] bg-clip-text text-transparent hover:text-[#D84437] ease duration-500'>Pets & Supplies</NavLink>
                 {
@@ -57,7 +57,20 @@ const Navbar = () => {
                     )
                 }
             </div>
-            <div className='flex flex-col items-center lg:flex-row gap-[30px]'>
+            <div className='flex flex-col items-center lg:gap-[30px] lg:flex-row gap-[20px]'>
+                {
+                    user ? (
+                        <>
+                            <NavLink><img src={user.photoURL} className="w-[40px] h-[40px] rounded-[50%]" /></NavLink>
+                            <NavLink onClick={handleOpenModal} className='text-center font-bold bg-linear-to-r from-[#0047ab] to-[#1ca9c9] bg-clip-text text-transparent hover:text-[#D84437] ease duration-500'>Logout</NavLink>
+                        </>
+                    ) : (
+                        <>
+                            <NavLink to='/login' className='text-center font-bold bg-linear-to-r from-[#0047ab] to-[#1ca9c9] bg-clip-text text-transparent hover:text-[#D84437] ease duration-500'>Login</NavLink>
+                            <NavLink to='/register' className='text-center font-bold bg-linear-to-r from-[#0047ab] to-[#1ca9c9] bg-clip-text text-transparent hover:text-[#D84437] ease duration-500'>Register</NavLink>
+                        </>
+                    )
+                }
                 <label className="flex cursor-pointer gap-2">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -89,19 +102,6 @@ const Navbar = () => {
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
                 </label>
-                {
-                    user ? (
-                        <>
-                            <NavLink><img src={user.photoURL} className="w-[40px] h-[40px] rounded-[50%]" /></NavLink>
-                            <NavLink onClick={handleOpenModal} className='text-center font-bold bg-linear-to-r from-[#0047ab] to-[#1ca9c9] bg-clip-text text-transparent hover:text-[#D84437] ease duration-500'>Logout</NavLink>
-                        </>
-                    ) : (
-                        <>
-                            <NavLink to='/login' className='text-center font-bold bg-linear-to-r from-[#0047ab] to-[#1ca9c9] bg-clip-text text-transparent hover:text-[#D84437] ease duration-500'>Login</NavLink>
-                            <NavLink to='/register' className='text-center font-bold bg-linear-to-r from-[#0047ab] to-[#1ca9c9] bg-clip-text text-transparent hover:text-[#D84437] ease duration-500'>Register</NavLink>
-                        </>
-                    )
-                }
 
             </div>
             {/* Modal for logout */}

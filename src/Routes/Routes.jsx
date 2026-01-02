@@ -67,10 +67,8 @@ const router=createBrowserRouter([
             },
             {
                 path:'/listings/:id',
-                element:<PrivateRoute>
-                    <ListingDetailsPage>
-                    </ListingDetailsPage>
-                </PrivateRoute>,
+                element:<ListingDetailsPage>
+                    </ListingDetailsPage>,
                 loader:({params})=>fetch(`https://paw-mart-server-seven.vercel.app/listings/${params.id}`)
             },
         ],

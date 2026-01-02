@@ -5,59 +5,59 @@ import toast from 'react-hot-toast';
 
 const ListingDetailsPage = () => {
     const data = useLoaderData();
-    const {user}=use(AuthContext);
-    
-    const navigate=useNavigate();
+    const { user } = use(AuthContext);
 
-    const { _id,name, image, location, category, ownerEmail, description, price } = data.data;
-    
-    const buyerUID=user.UID;
+    const navigate = useNavigate();
+
+    const { _id, name, image, location, category, ownerEmail, description, price } = data.data;
+
+    const buyerUID = user ? user.UID : null;
     const orderModalRef = useRef(null);
 
     const handleModalOpen = () => {
         orderModalRef.current.showModal();
     }
 
-    const handleSubmit=(e)=>{
+    const handleSubmit = (e) => {
         e.preventDefault();
-        const form=e.target;
-        const productId=form.productId.value;
-        const productName=form.productName.value;
-        const buyerName=form.buyerName.value;
-        const email=form.email.value;
-        const quantity=form.quantity.value;
-        const price=form.price.value;
-        const address=form.address.value;
-        const phone=form.phone.value;
-        const date=form.date.value;
-        const additionalNotes=form.additionalNotes.value;
+        const form = e.target;
+        const productId = form.productId.value;
+        const productName = form.productName.value;
+        const buyerName = form.buyerName.value;
+        const email = form.email.value;
+        const quantity = form.quantity.value;
+        const price = form.price.value;
+        const address = form.address.value;
+        const phone = form.phone.value;
+        const date = form.date.value;
+        const additionalNotes = form.additionalNotes.value;
 
-        const newOrder={
-            productId:productId,
-            productName:productName,
-            buyerName:buyerName,
-            email:email,
-            quantity:quantity,
-            price:price,
-            address:address,
-            phone:phone,
-            date:date,
-            additionalNotes:additionalNotes,
-            uid:buyerUID
+        const newOrder = {
+            productId: productId,
+            productName: productName,
+            buyerName: buyerName,
+            email: email,
+            quantity: quantity,
+            price: price,
+            address: address,
+            phone: phone,
+            date: date,
+            additionalNotes: additionalNotes,
+            uid: buyerUID
         }
 
-        fetch("https://paw-mart-server-seven.vercel.app/order",{
-            method:"POST",
-            headers:{
-                'Content-Type':'application/json'
+        fetch("https://paw-mart-server-seven.vercel.app/order", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify(newOrder)
-        }).then(res=>res.json()).then(data=>{
+        }).then(res => res.json()).then(data => {
             orderModalRef.current.close()
             navigate("/");
             toast.success("Order completed successfully!");
         });
-        
+
     }
 
     // console.log(user);
@@ -86,14 +86,20 @@ const ListingDetailsPage = () => {
 
                     </div>
                     <div>
-                        <p className='font-bold text-xl text-green-700 mb-[8px]'>PRICE: {
+                        <p className='font-bold text-xl text-green-700 mb-[16px]'>PRICE: {
                             price === 0 ? "FREE" : `৳ ${price}`
                         }</p>
-                        <button onClick={handleModalOpen} className="btn btn-neutral mt-4 border-none bg-linear-to-r from-[#0047ab] to-[#1ca9c9] hover:from-[#D84437] hover:to-[#ff6b6b] ease-in transition duration-500">
-                            {
-                                price === 0 ? "ADOPT NOW" : "ORDER NOW"
-                            }
-                        </button>
+                        {
+                            user ?
+                                <button onClick={handleModalOpen} className="btn btn-neutral mt-4 border-none bg-linear-to-r from-[#0047ab] to-[#1ca9c9] hover:from-[#D84437] hover:to-[#ff6b6b] ease-in transition duration-500">
+                                    {
+                                        price === 0 ? "ADOPT NOW" : "ORDER NOW"
+                                    }
+                                </button>
+                                :
+                                <div className='w-full max-w-full bg-red-400 border border-red-700 h-10 flex items-center justify-center font-medium'>PLEASE LOGIN TO ORDER</div>
+                        }
+
                     </div>
 
                 </div>
@@ -109,7 +115,7 @@ const ListingDetailsPage = () => {
                             </label>
                             <input
                                 type="text"
-                                value={user.displayName}
+                                value={user ? user.displayName : ""}
                                 name="buyerName"
                                 readOnly
                                 className="input input-bordered w-full"
@@ -122,7 +128,7 @@ const ListingDetailsPage = () => {
                             </label>
                             <input
                                 type="email"
-                                value={user.email}
+                                value={user ? user.email : ""}
                                 name="email"
                                 readOnly
                                 className="input input-bordered w-full"
@@ -227,13 +233,13 @@ const ListingDetailsPage = () => {
                             <textarea
                                 name="additionalNotes"
                                 placeholder="Any additional info"
-                                className="textarea textarea-bordered w-full resize-none" 
+                                className="textarea textarea-bordered w-full resize-none"
                             />
                         </div>
 
                         <div className="modal-action justify-between">
                             <button
-                                type="button" className="btn btn-neutral mt-4 border-none bg-linear-to-r from-[#0047ab] to-[#1ca9c9] hover:from-[#D84437] hover:to-[#ff6b6b] ease-in transition duration-500" 
+                                type="button" className="btn btn-neutral mt-4 border-none bg-linear-to-r from-[#0047ab] to-[#1ca9c9] hover:from-[#D84437] hover:to-[#ff6b6b] ease-in transition duration-500"
                                 onClick={() => orderModalRef.current.close()}
                             >
                                 Cancel
