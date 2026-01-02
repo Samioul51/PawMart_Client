@@ -44,7 +44,7 @@ const Home = () => {
                     zIndex: 9999
                 }}
             />
-            <div className='bg-[#6897ff]'>
+            <div className='bg-[#F5F5F5]'>
 
                 <div className='mb-[50px]'>
                     <Swiper
@@ -61,9 +61,9 @@ const Home = () => {
                         modules={[Navigation, Pagination, Autoplay]}
                         className="mySwiper"
                     >
-                        <SwiperSlide><img src={slide1} className='w-full max-w-full h-auto' /></SwiperSlide>
-                        <SwiperSlide><img src={slide2} className='w-full max-w-full h-auto' /></SwiperSlide>
-                        <SwiperSlide><img src={slide3} className='w-full max-w-full h-auto' /></SwiperSlide>
+                        <SwiperSlide><img src={slide1} className='w-full max-w-full h-[70vh]' /></SwiperSlide>
+                        <SwiperSlide><img src={slide2} className='w-full max-w-full h-[70vh]' /></SwiperSlide>
+                        <SwiperSlide><img src={slide3} className='w-full max-w-full h-[70vh]' /></SwiperSlide>
                     </Swiper>
                 </div>
 
@@ -76,10 +76,10 @@ const Home = () => {
 
                 <p className='text-center text-[32px] font-bold mb-[10px]'>RECENT LISTINGS</p>
 
-                <div className='w-full max-w-[1440px] h-auto grid grid-cols-1 mx-auto md:grid-cols-2 lg:grid-cols-3 gap-[50px] px-[40px] pb-[50px] box-border'>
+                <div className='w-full max-w-[1440px] h-auto grid grid-cols-1 mx-auto md:grid-cols-2 lg:grid-cols-4 gap-[20px] px-[40px] pb-[50px] box-border'>
 
                     {
-                        listingData.slice(0,6).map(item => (
+                        listingData.slice(0,8).map(item => (
                             <Listing key={item._id} item={item}></Listing>
                         ))
                     }

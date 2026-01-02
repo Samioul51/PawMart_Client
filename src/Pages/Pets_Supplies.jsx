@@ -37,7 +37,7 @@ const Pets_Supplies = () => {
                     zIndex: 9999
                 }}
             />
-            <div className='bg-[#6897ff] py-[50px]'>
+            <div className='bg-[#F5F5F5] py-[50px]'>
                 <title>{`PawMart | Pets & Supplies`}</title>
                 <p className='text-center text-[32px] font-bold mb-[30px]'>ALL PETS & PRODUCTS</p>
                 <div className='flex items-center justify-between mx-auto max-w-[1440px] mb-[50px] px-[40px]'>
@@ -62,7 +62,7 @@ const Pets_Supplies = () => {
                     </div>
                 </div>
                 <div className='w-full max-w-[1440px] h-auto grid grid-cols-1 mx-auto md:grid-cols-2 lg:grid-cols-3 gap-[50px] px-[40px] pb-[50px] box-border'>
-
+                    
                     {
                         filteredData.map(item => (
                             <Listing key={item._id} item={item}></Listing>

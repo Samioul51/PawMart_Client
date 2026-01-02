@@ -119,7 +119,7 @@ const MyListings = () => {
                     zIndex: 9999
                 }}
             />
-            <div className='bg-[#6897ff] py-[50px]'>
+            <div className='bg-[#F5F5F5] py-[50px]'>
                 <title>{`PawMart | My Listings`}</title>
                 <p className='text-center text-[32px] font-bold mb-[10px]'>MY LISTINGS</p>
                 <div className='w-full max-w-[1440px] h-auto mx-auto bg-white p-[50px] rounded-[10px]'>

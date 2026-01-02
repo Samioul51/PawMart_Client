@@ -74,7 +74,7 @@ const AddListing = () => {
                     zIndex: 9999
                 }}
             />
-            <div className='w-full bg-[#6897ff] py-[50px]'>
+            <div className='w-full bg-[#F5F5F5] py-[50px]'>
                 <title>{`PawMart | Add Listing`}</title>
                 <p className='text-center text-[32px] font-bold mb-[10px]'>ADD LISTING</p>
                 <form className='w-full max-w-[1440px] h-auto mx-auto bg-white p-[50px] rounded-[10px]' onSubmit={handleSubmit}>

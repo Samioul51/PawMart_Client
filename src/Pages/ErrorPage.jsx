@@ -23,7 +23,7 @@ const ErrorPage = () => {
                     zIndex: 9999
                 }}
             />
-            <div className='flex flex-col gap-[10px] justify-center items-center min-h-screen bg-[#6897ff]'>
+            <div className='flex flex-col gap-[10px] justify-center items-center min-h-screen bg-[#F5F5F5]'>
                 <title>{`404 Not Found`}</title>
                 <img src={ErrorImg} className='w-full max-w-[500px] h-auto' />
                 <Link to='/home'><Button>Back to Home</Button></Link>

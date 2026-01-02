@@ -56,9 +56,9 @@ const Login = () => {
                     zIndex: 9999
                 }}
             />
-            <div className='w-full bg-[#6897ff]'>
+            <div className='w-full bg-[#F5F5F5]'>
                 <title>{`PawMart | Login`}</title>
-                <div className="hero bg-[#6897ff] min-h-screen w-full max-w-[500px] mx-auto">
+                <div className="hero bg-[##F5F5F5] min-h-screen w-full max-w-[500px] mx-auto">
                     <div className="w-full hero-content flex-col">
                         <p className='text-center text-[32px] font-bold mb-[10px]'>LOGIN</p>
                         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
