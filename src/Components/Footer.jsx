@@ -19,15 +19,14 @@ const Footer = () => {
                     </div>
                     <ul className="flex flex-col gap-[16px]">
                         <li className="text-[20px] font-medium text-white text-center lg:text-start">Company</li>
-                        <li className="text-[#A1A1AA] cursor-pointer text-center lg:text-start">About Us</li>
-                        <li className="text-[#A1A1AA] cursor-pointer text-center lg:text-start">Our Mission</li>
-                        <li className="text-[#A1A1AA] cursor-pointer text-center lg:text-start">Contact Sales</li>
+                        <Link to="/about" className="text-[#A1A1AA] cursor-pointer text-center lg:text-start">About Us</Link>
+                        <Link to="/contact" className="text-[#A1A1AA] cursor-pointer text-center lg:text-start">Contact Us</Link>
                     </ul>
 
                     <ul className="flex flex-col gap-[16px]">
                         <li className="text-[20px] font-medium text-white text-center lg:text-start">Explore</li>
-                        <Link className="text-[#A1A1AA] cursor-pointer text-center lg:text-start">Home</Link>
-                        <Link className="text-[#A1A1AA] cursor-pointer text-center lg:text-start">Contact</Link>
+                        <Link to="/home" className="text-[#A1A1AA] cursor-pointer text-center lg:text-start">Home</Link>
+                        <Link to="/pets_supplies" className="text-[#A1A1AA] cursor-pointer text-center lg:text-start">Listings</Link>
                     </ul>
 
                     <ul className="flex flex-col gap-[16px]">

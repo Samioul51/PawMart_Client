@@ -12,6 +12,8 @@ import PrivateRoute from '../Provider/PrivateRoute';
 import CategoryWiseListings from '../Pages/CategoryWiseListings';
 import ListingDetailsPage from '../Pages/ListingDetailsPage';
 import AddListing from '../Pages/AddListing';
+import About from '../Pages/About';
+import Contact from '../Pages/Contact';
 
 const router=createBrowserRouter([
     {
@@ -25,6 +27,14 @@ const router=createBrowserRouter([
             {
                 path:'/home',
                 Component:Home
+            },
+            {
+                path:'/about',
+                Component:About
+            },
+            {
+                path:'/contact',
+                Component:Contact
             },
             {
                 path:'/pets_supplies',

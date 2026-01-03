@@ -42,6 +42,7 @@ const Navbar = () => {
             </div>
             <div className='flex flex-col lg:flex-row gap-[20px]  lg:gap-[30px]'>
                 <NavLink to='/home' className='text-center font-bold bg-linear-to-r from-[#0047ab] to-[#1ca9c9] bg-clip-text text-transparent hover:text-[#D84437] ease duration-500'>Home</NavLink>
+                <NavLink to='/about' className='text-center font-bold bg-linear-to-r from-[#0047ab] to-[#1ca9c9] bg-clip-text text-transparent hover:text-[#D84437] ease duration-500'>About</NavLink>
                 <NavLink to='/pets_supplies' className='text-center font-bold bg-linear-to-r from-[#0047ab] to-[#1ca9c9] bg-clip-text text-transparent hover:text-[#D84437] ease duration-500'>Pets & Supplies</NavLink>
                 {
                     user ? (
@@ -56,6 +57,8 @@ const Navbar = () => {
                         </>
                     )
                 }
+                
+                <NavLink to='/contact' className='text-center font-bold bg-linear-to-r from-[#0047ab] to-[#1ca9c9] bg-clip-text text-transparent hover:text-[#D84437] ease duration-500'>Contact Us</NavLink>
             </div>
             <div className='flex flex-col items-center lg:gap-[30px] lg:flex-row gap-[20px]'>
                 {
