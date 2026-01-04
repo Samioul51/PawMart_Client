@@ -145,40 +145,42 @@ const MyListings = () => {
                                         </tr>
                                     </thead>
                                         <tbody>
-                                        myData.map((list, index) => (
-                                            <tr key={list._id}>
-                                                <td>{index + 1}</td>
-                                                <td>
-                                                    <div className="flex items-center gap-3">
-                                                        <div className="avatar">
-                                                            <div className="mask mask-squircle h-12 w-12">
-                                                                <img
-                                                                    src={list.image}
-                                                                    alt="" />
+                                            {
+                                                myData.map((list, index) => (
+                                                    <tr key={list._id}>
+                                                        <td>{index + 1}</td>
+                                                        <td>
+                                                            <div className="flex items-center gap-3">
+                                                                <div className="avatar">
+                                                                    <div className="mask mask-squircle h-12 w-12">
+                                                                        <img
+                                                                            src={list.image}
+                                                                            alt="" />
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    {list.name}
-                                                </td>
-                                                <td>
-                                                    {list.category}
-                                                </td>
-                                                <td>{list.price}</td>
-                                                <td>{list.location}</td>
-                                                <td>{list.description}</td>
-                                                <td>{list.date}</td>
-                                                <td className='flex flex-col'>
-                                                    <button onClick={() => handleModalOpen(list)} type="submit" className="btn btn-neutral mt-4 border-none bg-linear-to-r from-[#0047ab] to-[#1ca9c9] hover:from-[#D84437] hover:to-[#ff6b6b] ease-in transition duration-500">
-                                                        Edit
-                                                    </button>
-                                                    <button onClick={() => handleDelete(list._id)} type="submit" className="btn btn-neutral mt-4 border-none bg-linear-to-r from-[#0047ab] to-[#1ca9c9] hover:from-[#D84437] hover:to-[#ff6b6b] ease-in transition duration-500">
-                                                        Delete
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            ))
+                                                        </td>
+                                                        <td>
+                                                            {list.name}
+                                                        </td>
+                                                        <td>
+                                                            {list.category}
+                                                        </td>
+                                                        <td>{list.price}</td>
+                                                        <td>{list.location}</td>
+                                                        <td>{list.description}</td>
+                                                        <td>{list.date}</td>
+                                                        <td className='flex flex-col'>
+                                                            <button onClick={() => handleModalOpen(list)} type="submit" className="btn btn-neutral mt-4 border-none bg-linear-to-r from-[#0047ab] to-[#1ca9c9] hover:from-[#D84437] hover:to-[#ff6b6b] ease-in transition duration-500">
+                                                                Edit
+                                                            </button>
+                                                            <button onClick={() => handleDelete(list._id)} type="submit" className="btn btn-neutral mt-4 border-none bg-linear-to-r from-[#0047ab] to-[#1ca9c9] hover:from-[#D84437] hover:to-[#ff6b6b] ease-in transition duration-500">
+                                                                Delete
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                ))
+                                            }
                                         </tbody>
                                     </>
                             }
