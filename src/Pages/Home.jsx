@@ -14,6 +14,9 @@ import Awareness from '../Components/Awareness';
 import PetHero from '../Components/PetHero';
 import Categories from '../Components/Categories';
 import Listing from '../Components/Listing';
+import Statistics from '../Components/Statistics';
+import Works from '../Components/Works';
+import Testimonials from '../Components/Testimonials';
 
 
 const categoryPromise = fetch("https://paw-mart-server-seven.vercel.app/categories").then(res => res.json());
@@ -46,7 +49,7 @@ const Home = () => {
             />
             <div className='bg-[#F5F5F5]'>
 
-                <div className='mb-[50px]'>
+                <div className='w-full max-w-[1440px] mx-auto mb-[50px]'>
                     <Swiper
                         autoHeight={true}
                         spaceBetween={20}
@@ -72,11 +75,16 @@ const Home = () => {
                 <p className='text-center text-[32px] font-bold mb-[10px]'>CATEGORIES</p>
                 <Categories category={category}></Categories>
 
+                {/* How Pawmart works */}
+
+                <p className='text-center text-[32px] font-bold mb-[10px]'>HOW PAWMART WORKS</p>
+                <Works></Works>
+
                 {/* Recent Listings */}
 
                 <p className='text-center text-[32px] font-bold mb-[10px]'>RECENT LISTINGS</p>
 
-                <div className='w-full max-w-[1440px] h-auto grid grid-cols-1 mx-auto md:grid-cols-2 lg:grid-cols-4 gap-[20px] px-[40px] pb-[50px] box-border'>
+                <div className='w-full max-w-[1440px] h-auto grid grid-cols-1 mx-auto md:grid-cols-2 lg:grid-cols-4 gap-[20px] pb-[50px] box-border'>
 
                     {
                         listingData.slice(0,8).map(item => (
@@ -89,6 +97,13 @@ const Home = () => {
 
                 <Awareness></Awareness>
 
+                {/* Testimonials */}
+                <p className='text-center text-[32px] font-bold mb-[10px]'>TESTIMONIALS</p>
+                <Testimonials></Testimonials>
+
+                {/* Statistics */}
+                <p className='text-center text-[32px] font-bold mb-[10px]'>STATISTICS</p>
+                <Statistics></Statistics>
                 {/* Users */}
                 <p className='text-center text-[32px] font-bold mb-[10px]'>MEET OUR PET LOVERS</p>
                 <PetHero></PetHero>

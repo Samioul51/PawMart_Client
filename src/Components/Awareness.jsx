@@ -4,10 +4,11 @@ import cat from '../assets/cat.jpg'
 
 const Awareness = () => {
     return (
-        <div className='w-full max-w-full h-auto bg-[#36454F] flex flex-col lg:flex-row lg:justify-between items-center p-[20px] box-border gap-[20px] mb-[50px]'>
-            <img src={cat} className='w-full max-w-[800px] h-auto rounded-[10px]' />
+        <div className='px-[68px]'>
+        <div className='w-full max-w-[1440px] rounded-[8px] mx-auto h-auto bg-[#36454F] flex flex-col lg:flex-row lg:justify-between items-center p-[20px] box-border gap-[20px] mb-[50px]'>
+            <img src={cat} className='w-full max-w-[600px] h-auto rounded-[10px]' />
             <div className='w-full max-w-[50%] flex flex-col items-center gap-[20px] h-auto'>
-                <p className='text-white font-bold text-4xl inter'>Why Adopt From PawMart?</p>
+                <p className='text-white font-bold text-3xl inter'>Why Adopt From PawMart?</p>
                 <p className='text-[#FDFBD4] text-xl text-justify w-full max-w-[500px]'>
                     <Typewriter
                         words={[
@@ -24,6 +25,7 @@ const Awareness = () => {
 
             </div>
 
+        </div>
         </div>
     );
 };

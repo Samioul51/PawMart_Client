@@ -34,7 +34,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className='flex flex-col items-center lg:justify-between lg:flex-row px-[40px] gap-[20px] lg:gap-0 py-[20px] box-border inter shadow-lg sticky top-0 z-50 bg-white'>
+        <div className='flex flex-col items-center lg:justify-between lg:flex-row gap-[20px] lg:gap-0 py-[20px] box-border inter shadow-lg sticky top-0 z-50 bg-white'>
             <div>
                 <NavLink to='/'>
                     <img src={logo} className='w-[100px] h-[100px]' />

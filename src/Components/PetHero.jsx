@@ -7,7 +7,7 @@ import { motion } from 'motion/react';
 
 const PetHero = () => {
     return (
-        <div className='w-full max-w-full h-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-[10px] px-[40px] pb-[50px] box-border'>
+        <div className='w-full max-w-[1440px] mx-auto h-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-[10px] pb-[50px] box-border'>
             <motion.div
                 whileHover={{ scale: 1.05 }}
             >
