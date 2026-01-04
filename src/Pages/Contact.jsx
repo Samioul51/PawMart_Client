@@ -21,20 +21,20 @@ const Contact = () => {
             message: message,
             sent: new Date()
         };
-        // const res = await fetch("https://paw-mart-server-seven.vercel.app/contact", {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json"
-        //     },
-        //     body: JSON.stringify(fields)
-        // });
+        const res = await fetch("https://paw-mart-server-seven.vercel.app/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(fields)
+        });
 
-        // if (res.ok) {
-        //     toast.success("Message sent successfully!");
-        //     form.reset();
-        // }
-        // else
-        //     toast.error("Failed to send message. Try again later.");
+        if (res.ok) {
+            toast.success("Message sent successfully!");
+            form.reset();
+        }
+        else
+            toast.error("Failed to send message. Try again later.");
     }
     return (
         <>
@@ -61,19 +61,19 @@ const Contact = () => {
                 <form onSubmit={handleSendMessage} className=' bg-white-bg shadow-2xl p-[64px]  w-full max-w-[720px] mx-auto '>
                     <div className='flex flex-col mb-[24px]'>
                         <label className="label mb-[8px] font-medium text-black">Your Name</label>
-                        <input type="text" className="input bg-fafafa-bg px-[14px] py-[19px] w-full text-[1rem] rounded-lg border border-gray-200 focus:outline-none focus:border-gray-300" name="name" placeholder="Enter your name" required />
+                        <input type="text" className="input bg-white px-[14px] py-[19px] w-full text-[1rem] rounded-lg border border-gray-200 focus:outline-none focus:border-gray-300" name="name" placeholder="Enter your name" required />
                     </div>
                     <div className='flex flex-col mb-[24px]'>
                         <label className="label mb-[8px] font-medium text-black">Your Email</label>
-                        <input type="email" className="input bg-fafafa-bg px-[14px] py-[19px] w-full text-[1rem] rounded-lg border border-gray-200 focus:outline-none focus:border-gray-300" name="email" placeholder="Enter your Email" required />
+                        <input type="email" className="input  bg-white px-[14px] py-[19px] w-full text-[1rem] rounded-lg border border-gray-200 focus:outline-none focus:border-gray-300" name="email" placeholder="Enter your Email" required />
                     </div>
                     <div className='flex flex-col mb-[24px]'>
                         <label className="label mb-[8px] font-medium text-black">Subject</label>
-                        <input type="text" className="input bg-fafafa-bg px-[14px] py-[19px] w-full text-[1rem] rounded-lg border border-gray-200 focus:outline-none focus:border-gray-300" name="subject" placeholder="Subject" required />
+                        <input type="text" className="input bg-white px-[14px] py-[19px] w-full text-[1rem] rounded-lg border border-gray-200 focus:outline-none focus:border-gray-300" name="subject" placeholder="Subject" required />
                     </div>
                     <div className='flex flex-col mb-[24px]'>
                         <label className="label mb-[8px] font-medium text-black">Message</label>
-                        <textarea name="message" class="textarea bg-fafafa-bg px-[14px] py-[19px] w-full text-[1rem] rounded-lg border border-gray-200 focus:outline-none focus:border-gray-300 resize-none h-[200px]" placeholder="Message" required></textarea>
+                        <textarea name="message" className="textarea  bg-white px-[14px] py-[19px] w-full text-[1rem] rounded-lg border border-gray-200 focus:outline-none focus:border-gray-300 resize-none h-[200px]" placeholder="Message" required></textarea>
                     </div>
 
                     <button type="submit" className="w-full btn btn-neutral mt-4 border-none bg-linear-to-r from-[#0047ab] to-[#1ca9c9] hover:from-[#D84437] hover:to-[#ff6b6b] ease-in transition duration-500">

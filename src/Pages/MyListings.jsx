@@ -74,7 +74,7 @@ const MyListings = () => {
         const updatedData = {
             name: form.name.value,
             location: form.location.value,
-            price: form.price.value,
+            price: Number(form.price.value),
             description: form.description.value,
             image: form.image.value,
             date: form.date.value

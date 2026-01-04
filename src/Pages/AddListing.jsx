@@ -17,7 +17,7 @@ const AddListing = () => {
         const form = e.target;
         const productName = form.productName.value;
         const category = form.category.value;
-        const price = form.price.value;
+        const price = Number(form.price.value);
         const location = form.location.value;
         const description = form.description.value;
         const image = form.image.value;
