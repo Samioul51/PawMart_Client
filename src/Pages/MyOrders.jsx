@@ -117,11 +117,17 @@ const MyOrders = () => {
                             }
                         </table>
                     </div>
-                    <div className='flex justify-center'>
-                        <button onClick={handleDownloadPDF} className="btn btn-neutral mt-4 border-none bg-linear-to-r from-[#0047ab] to-[#1ca9c9] hover:from-[#D84437] hover:to-[#ff6b6b] ease-in transition duration-500">
-                            Download PDF
-                        </button>
-                    </div>
+                    {
+                        myData.length === 0 ?
+                            <div></div>
+                            :
+                            <div className='flex justify-center'>
+                                <button onClick={handleDownloadPDF} className="btn btn-neutral mt-4 border-none bg-linear-to-r from-[#0047ab] to-[#1ca9c9] hover:from-[#D84437] hover:to-[#ff6b6b] ease-in transition duration-500">
+                                    Download PDF
+                                </button>
+                            </div>
+                    }
+
 
                 </div>
 
