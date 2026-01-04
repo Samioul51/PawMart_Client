@@ -4,7 +4,7 @@ import cat from '../assets/cat.jpg'
 
 const Awareness = () => {
     return (
-        <div className='px-[68px]'>
+        <div className='px-[28px]'>
         <div className='w-full max-w-[1440px] rounded-[8px] mx-auto h-auto bg-[#36454F] flex flex-col lg:flex-row lg:justify-between items-center p-[20px] box-border gap-[20px] mb-[50px]'>
             <img src={cat} className='w-full max-w-[600px] h-auto rounded-[10px]' />
             <div className='w-full max-w-[50%] flex flex-col items-center gap-[20px] h-auto'>
