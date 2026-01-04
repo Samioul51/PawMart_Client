@@ -89,7 +89,8 @@ const Navbar = () => {
                         {
                         user ? (
                             <>
-                                <img src={user.photoURL} className="w-10 h-10 rounded-full" />
+                            <NavLink to="/dashboard/profile"><img src={user.photoURL} className="w-10 h-10 rounded-full" /></NavLink>
+                                
                                 <button onClick={handleOpenModal} className='font-bold bg-linear-to-r from-[#0047ab] to-[#1ca9c9] bg-clip-text text-transparent hover:text-[#D84437] ease duration-500'>Logout</button>
                             </>
                         ) : (
