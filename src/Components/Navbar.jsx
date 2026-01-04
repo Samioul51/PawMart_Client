@@ -76,11 +76,6 @@ const Navbar = () => {
                         <NavLink to='/home' className={({ isActive }) => `font-bold ${isActive ? activeClass : normalClass}`}>Home</NavLink>
                         <NavLink to='/about' className={({ isActive }) => `font-bold ${isActive ? activeClass : normalClass}`}>About</NavLink>
                         <NavLink to='/pets_supplies' className={({ isActive }) => `font-bold ${isActive ? activeClass : normalClass}`}>Pets & Supplies</NavLink>
-                        {user && <>
-                            <NavLink to='/add_listings' className={({ isActive }) => `font-bold ${isActive ? activeClass : normalClass}`}>Add Listing</NavLink>
-                            <NavLink to='/my_listings' className={({ isActive }) => `font-bold ${isActive ? activeClass : normalClass}`}>My Listings</NavLink>
-                            <NavLink to='/my_orders' className={({ isActive }) => `font-bold ${isActive ? activeClass : normalClass}`}>My Orders</NavLink>
-                        </>}
                         <NavLink to='/contact' className={({ isActive }) => `font-bold ${isActive ? activeClass : normalClass}`}>Contact Us</NavLink>
                     </div>
 

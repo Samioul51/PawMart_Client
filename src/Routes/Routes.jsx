@@ -55,24 +55,6 @@ const router = createBrowserRouter([
                 </PublicRoute>
             },
             {
-                path: '/add_listings',
-                element: <PrivateRoute>
-                    <AddListing></AddListing>
-                </PrivateRoute>
-            },
-            {
-                path: '/my_listings',
-                element: <PrivateRoute>
-                    <MyListings></MyListings>
-                </PrivateRoute>
-            },
-            {
-                path: '/my_orders',
-                element: <PrivateRoute>
-                    <MyOrders></MyOrders>
-                </PrivateRoute>
-            },
-            {
                 path: '/category/:category',
                 Component: CategoryWiseListings,
                 loader: () => fetch("https://paw-mart-server-seven.vercel.app/listings")
@@ -102,6 +84,18 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/profile",
                 element: <UserProfile></UserProfile>
+            },
+            {
+                path:"/dashboard/my-listings",
+                element:<MyListings></MyListings>
+            },
+            {
+                path:"/dashboard/add-listing",
+                element:<AddListing></AddListing>
+            },
+            {
+                path:"/dashboard/my-orders",
+                element:<MyOrders></MyOrders>
             },
         ]
     }

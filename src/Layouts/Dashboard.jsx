@@ -1,13 +1,5 @@
-import React, { use, useEffect } from 'react';
+import React, { use } from 'react';
 import { NavLink, Outlet } from 'react-router';
-import { CgProfile } from "react-icons/cg";
-import { TbShoppingBagCheck } from "react-icons/tb";
-import { IoReturnUpBackOutline } from "react-icons/io5";
-import { MdWork } from "react-icons/md";
-import { IoCheckmarkDoneCircle } from "react-icons/io5";
-import { RiAddCircleFill } from "react-icons/ri";
-import { AiFillProduct } from "react-icons/ai";
-import { FaUser } from "react-icons/fa";
 import logo from "../assets/PetMart.png"
 import { AuthContext } from '../Provider/AuthProvider';
 
@@ -29,7 +21,7 @@ const Dashboard = () => {
                     <div className="px-4 font-bold text-black">My Dashboard</div>
                 </nav>
 
-                <div className="p-4 bg-fafafa-bg">
+                <div className="p-4 bg-[#F5F5F5]">
                     <Outlet />
                 </div>
             </div>
@@ -44,20 +36,31 @@ const Dashboard = () => {
                     </li>
                     <li>
                         <NavLink to="/dashboard/profile" className={({ isActive }) => `font-bold text-black text-#1ca9c9 text-[16px] ${isActive ? "bg-[#99a1af]" : "hover:bg-gray-400"} transition-colors ease-in-out duration-500`}>
-                            <CgProfile /> My Profile
+                            My Profile
                         </NavLink>
                     </li>
 
                     <li>
-                            <NavLink to="/dashboard/my-orders" className={({ isActive }) => `font-bold text-black text-[16px] ${isActive ? "bg-[#99a1af]" : "hover:bg-gray-400"} transition-colors ease-in-out duration-500`}>
-                                <TbShoppingBagCheck /> My Orders
-                            </NavLink>
-                        </li>
+                        <NavLink to="/dashboard/add-listing" className={({ isActive }) => `font-bold text-black text-#1ca9c9 text-[16px] ${isActive ? "bg-[#99a1af]" : "hover:bg-gray-400"} transition-colors ease-in-out duration-500`}>
+                            Add Listing
+                        </NavLink>
+                    </li>
 
+                    <li>
+                        <NavLink to="/dashboard/my-orders" className={({ isActive }) => `font-bold text-black text-[16px] ${isActive ? "bg-[#99a1af]" : "hover:bg-gray-400"} transition-colors ease-in-out duration-500`}>
+                            My Orders
+                        </NavLink>
+                    </li>
+
+                    <li>
+                        <NavLink to="/dashboard/my-listings" className={({ isActive }) => `font-bold text-black text-[16px] ${isActive ? "bg-[#99a1af]" : "hover:bg-gray-400"} transition-colors ease-in-out duration-500`}>
+                            My Listings
+                        </NavLink>
+                    </li>
 
                     <li>
                         <NavLink to="/" className={({ isActive }) => `font-bold text-black text-[16px] ${isActive ? "bg-[#99a1af]" : "hover:bg-gray-400"} transition-colors ease-in-out duration-500`}>
-                            <IoReturnUpBackOutline /> Back to Home
+                            Back to Home
                         </NavLink>
                     </li>
                 </ul>
