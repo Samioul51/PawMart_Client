@@ -15,13 +15,13 @@ const MyOrders = () => {
     const myData = ordersData.filter(list => list.email === user.email);
     // console.log(myData);
 
-    const handleDownloadPDF=()=>{
-        const doc=new jsPDF();
+    const handleDownloadPDF = () => {
+        const doc = new jsPDF();
 
         doc.setFontSize(18);
-        doc.text("My Orders",14,22);
+        doc.text("My Orders", 14, 22);
 
-        const columns=[
+        const columns = [
             "#",
             "Product/Listing Name",
             "Buyer Name",
@@ -32,8 +32,8 @@ const MyOrders = () => {
             "Phone"
         ];
 
-        const rows=myData.map((order,index)=>[
-            index+1,
+        const rows = myData.map((order, index) => [
+            index + 1,
             order.productName,
             order.buyerName,
             order.price,
@@ -43,11 +43,11 @@ const MyOrders = () => {
             order.phone
         ]);
 
-        autoTable(doc,{
-            head:[columns],
-            body:rows,
-            startY:30,
-            styles:{fontSize:10}
+        autoTable(doc, {
+            head: [columns],
+            body: rows,
+            startY: 30,
+            styles: { fontSize: 10 }
         });
 
         doc.save("myOrders.pdf");
@@ -75,40 +75,46 @@ const MyOrders = () => {
                 <div className='w-full max-w-[1440px] h-auto mx-auto bg-white p-[50px] rounded-[10px]'>
                     <div className="overflow-x-auto mb-[20px]">
                         <table className="table">
-                            {/* head */}
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Product/Listing Name</th>
-                                    <th>Buyer Name</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Address</th>
-                                    <th>Date</th>
-                                    <th>Phone</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {
-                                    myData.map((order, index) => (
-                                        <tr>
-                                            <td>{index + 1}</td>
-                                            <td>{order.productName}</td>
+                            {
+                                myData.length === 0 ?
+                                    <p className="text-center text-xl font-medium mb-8">NO ORDER FOUND</p>
+                                    :
+                                    <>
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Product/Listing Name</th>
+                                                <th>Buyer Name</th>
+                                                <th>Price</th>
+                                                <th>Quantity</th>
+                                                <th>Address</th>
+                                                <th>Date</th>
+                                                <th>Phone</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {
+                                                myData.map((order, index) => (
+                                                    <tr>
+                                                        <td>{index + 1}</td>
+                                                        <td>{order.productName}</td>
 
-                                            <td>
-                                                {order.buyerName}
-                                            </td>
-                                            <td>
-                                                {order.price}
-                                            </td>
-                                            <td>{order.quantity}</td>
-                                            <td>{order.address}</td>
-                                            <td>{order.date}</td>
-                                            <td>{order.phone}</td>
-                                        </tr>
-                                    ))
-                                }
-                            </tbody>
+                                                        <td>
+                                                            {order.buyerName}
+                                                        </td>
+                                                        <td>
+                                                            {order.price}
+                                                        </td>
+                                                        <td>{order.quantity}</td>
+                                                        <td>{order.address}</td>
+                                                        <td>{order.date}</td>
+                                                        <td>{order.phone}</td>
+                                                    </tr>
+                                                ))
+                                            }
+                                        </tbody>
+                                    </>
+                            }
                         </table>
                     </div>
                     <div className='flex justify-center'>

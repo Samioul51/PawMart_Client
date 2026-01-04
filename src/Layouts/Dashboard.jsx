@@ -9,7 +9,7 @@ const Dashboard = () => {
     return (
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content">
+            <div className="drawer-content bg-[#F5F5F5]">
                 <nav className="navbar w-full bg-[#1ca9c9]">
                     <label htmlFor="my-drawer-4" className="btn btn-square btn-ghost lg:hidden">
                         {/* icon */}
